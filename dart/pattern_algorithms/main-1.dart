@@ -17,24 +17,23 @@ void tranglePatten(List<String> args) {
     fill: ' ',
   );
 
-  for (int i = 0; i < dp.raw; i++) {
+  for (int i = 0; i < dp.row; i++) {
     dp.addAt(i, dp.columnCenter - i, 'x');
     dp.addAt(i, dp.columnCenter + i, 'x');
     dp.addAt(dp.rowlast, i, 'x');
     dp.addAt(dp.rowlast, i + dp.columnCenter, 'x');
 
-    if (i < dp.rawCenter) {
-      dp.addAt(dp.raw - 1 - i, dp.columnCenter - i, 'x');
-      dp.addAt(dp.raw - 1 - i, dp.columnCenter + i, 'x');
+    if (i < dp.rowCenter) {
+      dp.addAt(dp.row - 1 - i, dp.columnCenter - i, 'x');
+      dp.addAt(dp.row - 1 - i, dp.columnCenter + i, 'x');
     }
 
-    dp.addAt(dp.rawCenter, i + dp.rawCenter, 'x');
-    dp.addAt(dp.rawCenter, i + dp.rawCenter, 'x');
+    dp.addAt(dp.rowCenter, i + dp.rowCenter, 'x');
+    dp.addAt(dp.rowCenter, i + dp.rowCenter, 'x');
   }
   print(dp);
 }
 
-/ Not Working
 void heartStarPatten(List<String> args) {
   ///-------Heart Star Pattern---------
   ///
@@ -53,9 +52,9 @@ void heartStarPatten(List<String> args) {
     column: size * 2 - 1,
     fill: ' ',
   );
-  var sp = (dp.raw - size) - 1;
+  var sp = (dp.row - size) - 1;
   var ep = sp + (size ~/ 2) - 1;
-  for (var i = 0; i < dp.raw; i++) {
+  for (var i = 0; i < dp.row; i++) {
     if (i < sp)
       for (var j = sp; j <= ep; j++) {
         dp.addAt(i, j, 'x');
@@ -94,9 +93,9 @@ void fillHeartStarPatten(List<String> args) {
     column: size * 2 - 1,
     fill: ' ',
   );
-  var sp = (dp.raw - size) - 1;
+  var sp = (dp.row - size) - 1;
   var ep = sp + (size / 2) - 1;
-  for (var i = 0; i < dp.raw; i++) {
+  for (var i = 0; i < dp.row; i++) {
     for (var j = sp; j <= ep; j++) {
       dp.addAt(i, j, 'x');
       if (j != size - 1) dp.addAt(i, dp.column - 1 - j, 'x');
@@ -122,20 +121,20 @@ void jaiShriGanesh(List<String> args) {
   /// @ @ @   @
   ///
   var dp = Matrix<String>(5, fill: ' ');
-  for (int i = dp.lastIndex; i >= 0; i--) {
-    if (i == dp.lastIndex) {
-      for (int f = 0; f <= dp.center; f++) {
+  for (int i = dp.row; i >= 0; i--) {
+    if (i == dp.rowlast) {
+      for (int f = 0; f <= dp.rowCenter; f++) {
         dp.addAt(i, f, 'x');
-        dp.addAt(f, dp.lastIndex - i, 'x');
+        dp.addAt(f, dp.rowlast - i, 'x');
       }
     } else if (i == 0) {
-      for (int f = dp.center; f < dp.length; f++) {
+      for (int f = dp.rowCenter; f < dp.rowlast; f++) {
         dp.addAt(i, f, 'x');
-        dp.addAt(f, dp.lastIndex - i, 'x');
+        dp.addAt(f, dp.rowlast - i, 'x');
       }
     } else {
-      dp.addAt(i, dp.center, 'x');
-      dp.addAt(dp.center, i, 'x');
+      dp.addAt(i, dp.rowCenter, 'x');
+      dp.addAt(dp.rowCenter, i, 'x');
     }
   }
   print(dp);
@@ -149,14 +148,14 @@ void cube(List<String> args) {
   ///   @   @
   ///     @
   var dp = Matrix<String>(5, fill: ' ');
-  int j = dp.center;
-  for (int i = 0; i < dp.length; i++) {
+  int j = dp.rowCenter;
+  for (int i = 0; i < dp.rowlast; i++) {
     dp.addAt(i, j, 'x');
 
-    if (i != 0 && i != dp.lastIndex)
-      dp.addAt(dp.lastIndex - i, dp.lastIndex - j, 'x');
+    if (i != 0 && i != dp.columnlast)
+      dp.addAt(dp.columnlast - i, dp.columnlast - j, 'x');
 
-    if (i < dp.center) {
+    if (i < dp.rowCenter) {
       j++;
     } else {
       j--;
@@ -179,12 +178,12 @@ void inBoxCube(List<String> args) {
 
   var dp = Matrix(9, column: 11, fill: ' ');
   int objects = dp.column ~/ 2;
-  for (var i = 0; i < dp.length; i++) {
+  for (var i = 0; i < dp.rowlast; i++) {
     for (int l = 0; l < objects; l++) {
       dp.addAt(i, l, 'x');
       dp.addAt(i, dp.column - l - 1, 'x');
     }
-    if (i < dp.raw ~/ 2) {
+    if (i < dp.row ~/ 2) {
       objects--;
     } else {
       objects++;
@@ -195,7 +194,6 @@ void inBoxCube(List<String> args) {
 }
 
 void fillCube(List<String> args) {
-
   /// ---------Output-------
   ///     @
   ///   @ @ @
@@ -206,12 +204,12 @@ void fillCube(List<String> args) {
   var dp = Matrix<String>(5, fill: ' ');
 
   int objects = 1;
-  int startIndex = dp.center;
-  for (var raw = 0; raw < dp.length; raw++) {
+  int startIndex = dp.rowCenter;
+  for (var raw = 0; raw < dp.rowlast; raw++) {
     for (int i = startIndex; i < startIndex + objects; i++) {
       dp.addAt(raw, i, 'x');
     }
-    if (raw < dp.center) {
+    if (raw < dp.rowCenter) {
       startIndex--;
       objects += 2;
     } else {
@@ -222,7 +220,7 @@ void fillCube(List<String> args) {
   print(dp);
 }
 
-void rightTrangle(List<String> args) {e
+void rightTrangle(List<String> args) {
   /// ---------Output-------
   ///         @
   ///       @ @
@@ -230,9 +228,9 @@ void rightTrangle(List<String> args) {e
   ///   @ @ @ @
   /// @ @ @ @ @
   var dp = Matrix<String>(5, fill: ' ');
-  for (var raw = 0; raw <= dp.lastIndex; raw++) {
-    var column = dp.lastIndex;
-    while (column >= dp.lastIndex - raw) {
+  for (var raw = 0; raw <= dp.rowlast; raw++) {
+    var column = dp.rowlast;
+    while (column >= dp.columnlast - raw) {
       dp.addAt(raw, column, 'x');
       column--;
     }

@@ -1,16 +1,16 @@
 class Matrix<T> {
-  final int raw, column;
+  final int row, column;
   final List<List<T?>> _array;
 
-  Matrix(this.raw, {int? column, T? fill})
-      : column = column ?? raw,
-        _array = List.generate(raw, (i) {
-          return List.filled(column ?? raw, fill, growable: true);
+  Matrix(this.row, {int? column, T? fill})
+      : column = column ?? row,
+        _array = List.generate(row, (i) {
+          return List.filled(column ?? row, fill, growable: true);
         });
 
   int get columnlast => column - 1;
-  int get rowlast => raw - 1;
-  int get rawCenter => raw ~/ 2;
+  int get rowlast => row - 1;
+  int get rowCenter => row ~/ 2;
   int get columnCenter => column ~/ 2;
 
   bool equalTo(int r, int c, T data) {
