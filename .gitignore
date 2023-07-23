@@ -1,0 +1,12 @@
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Log files
+*.log
+
+# VS-Dependent
+*.devcontainer
