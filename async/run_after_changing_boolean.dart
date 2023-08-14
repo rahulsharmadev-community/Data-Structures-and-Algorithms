@@ -1,26 +1,25 @@
 import 'dart:async';
 
-void main() {
+void main() async {
   // Initialize the boolean value
-  bool toggleValue = false;
+  bool downloading = false;
 
   // Create a timer that toggles the boolean value every 2 seconds
-  Timer.periodic(Duration(seconds: 2), (timer) {
-    toggleValue = !toggleValue;
-    print('Toggled: $toggleValue');
+  var timer = Timer.periodic(Duration(seconds: 2), (timer) {
+    downloading = !downloading;
+    print('Toggled: $downloading');
   });
 
   // Wait until the toggle value becomes true
-  waitForToggleValue(toggleValue).then((_) {
-    print('Toggle value is now true');
-  });
+  await waitForDownloading(() => downloading);
+  timer.cancel();
+  print('Toggle value is now true');
 }
 
-Future<void> waitForToggleValue(bool targetValue) async {
-  while (true) {
-    if (targetValue) {
-      break;
-    }
-    await Future.delayed(Duration(milliseconds: 100)); // Adjust the delay as needed
+Future<void> waitForDownloading(bool Function() condition) async {
+  while (!condition()) {
+    print('wait for 100ms');
+    await Future.delayed(
+        Duration(milliseconds: 100)); // Adjust the delay as needed
   }
 }
