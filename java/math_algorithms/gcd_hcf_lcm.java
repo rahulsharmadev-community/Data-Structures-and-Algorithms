@@ -21,7 +21,6 @@ public class gcd_hcf_lcm {
 
         for (GCD_LCM item : array) {
             System.out.println(item);
-
         }
     }
 }
