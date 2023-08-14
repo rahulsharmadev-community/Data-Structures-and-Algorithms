@@ -10,3 +10,4 @@
 
 # VS-Dependent
 *.devcontainer
+*.vscode
