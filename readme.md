@@ -1,4 +1,8 @@
-# Welcome to the world of Data Structures and Algorithms!
+
+# `Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.`
+~Eagleson's Law
+
+## Welcome to the world of Data Structures and Algorithms!
 A place where you can discover and learn about Data Structures and algorithms. Whether you're just starting out and seeking a solid foundation or aiming to ace your upcoming technical interviews, Repository has got your back. With its user-friendly content and approachable explanations, you'll find yourself quickly grasping even the most complex problems.
 
 - DSA Playground takes a friendlier approach, breaking down concepts into bite-sized, easy-to-digest pieces.
