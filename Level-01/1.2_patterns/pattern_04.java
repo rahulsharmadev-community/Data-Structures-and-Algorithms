@@ -31,27 +31,27 @@ public class pattern_04 {
  */
 
   private static void _Q1(int n) {
-    int sp = n / 2;
-    int st = 1;
+    int space = n / 2;
+    int star = 1;
     int firstValue = 1;
     for (int i = 1; i <= n; i++) {
-      _printSpace(sp); //print Space first
+      _printSpace(space); //print Space first
 
       int value = firstValue;
-      for (int j = 1; j <= st; j++) {
-        _print(" " + value + " ");
+      for (int j = 1; j <= star; j++) {
+        _print(value);
 
-        if (j <= st / 2) value++; else value--;
+        if (j <= star / 2) value++; else value--;
       }
       _println();
 
       if (i <= n / 2) {
-        sp--;
-        st += 2;
+        space--;
+        star += 2;
         firstValue++;
       } else {
-        sp++;
-        st -= 2;
+        space++;
+        star -= 2;
         firstValue--;
       }
     }
@@ -75,7 +75,7 @@ public class pattern_04 {
  */
 
   private static void _Q2(int n) {
-    int sp = n * 2 - 3; // Calculate the initial number of spaces
+    int space = n * 2 - 3; // Calculate the initial number of spaces
     int value = 1; // Starting from `1`
 
     for (int i = 1; i <= n; i++) {
@@ -85,7 +85,7 @@ public class pattern_04 {
       }
 
       // Print spaces b/w numbers
-      _printSpace(sp);
+      _printSpace(space);
 
       if (i == n) value--; // Avoid repeating the middle number
 
@@ -94,7 +94,7 @@ public class pattern_04 {
         _print(j);
       }
 
-      sp -= 2; // Reduce the number of spaces for the next row
+      space -= 2; // Reduce the number of spaces for the next row
       value++; // Increase the value for the next row
       _println(); // Move to the next line
     }
