@@ -1,15 +1,17 @@
 import java.util.*;
 
-/**
- * Greatest Common Divisor (GCD) or Highest Common Factor (HCF)
- * of two positive integers is the largest positive integer that
- * divides both numbers without remainder.
- * [more]: https://www.idomaths.com/hcflcm.php#findhcf
- *
- * Least Common Multiple (LCM) of two integers is the smallest
- * integer that is a multiple of both numbers.
- * [more]: https://www.idomaths.com/hcflcm.php#findlcm
- */
+/*  
+
+   Greatest Common Divisor (GCD) or Highest Common Factor (HCF)
+   of two positive integers is the largest positive integer that
+   divides both numbers without remainder.
+   [more]: https://www.idomaths.com/hcflcm.php#findhcf
+  
+   Least Common Multiple (LCM) of two integers is the smallest
+   integer that is a multiple of both numbers.
+   [more]: https://www.idomaths.com/hcflcm.php#findlcm
+ 
+   */
 
 public class gcd_hcf_lcm {
 
