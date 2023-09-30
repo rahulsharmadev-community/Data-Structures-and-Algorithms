@@ -22,7 +22,7 @@ public class decimal_to_any_base {
     // Ensure that the base is within a valid range (between 2 and 36),
     // which allows for a combination of up to 10 digits and 26 alphabetic.
     if (base < 2 || base > 36) {
-      throw new IllegalArgumentException("Base must be b/w 2 to 36.");
+      throw new IllegalArgumentException("Base must be between 2 to 36.");
     }
     if (number == 0) return "0"; // Handle the special case of 0.
 
@@ -31,10 +31,10 @@ public class decimal_to_any_base {
     // Characters order is very importent
     char[] charSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
-    // For negative numbers, add a minus sign and work with the absolute value.
+    // For negative numbers, add a minus sign
     if (number < 0) {
       str.append('-');
-      number = Math.abs(number);
+      number = -number;
     }
 
     while (number > 0) {

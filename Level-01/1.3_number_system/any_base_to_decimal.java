@@ -35,7 +35,7 @@ public class any_base_to_decimal {
     // Ensure that the base is within a valid range (between 2 and 36),
     // which allows for a combination of up to 10 digits and 26 alphabetic.
     if (base < 2 || base > 36) {
-      throw new IllegalArgumentException("Base must be b/w 2 to 36.");
+      throw new IllegalArgumentException("Base must be between 2 to 36.");
     }
 
     for (int i = 0; i < number.length(); i++) {
