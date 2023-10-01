@@ -37,9 +37,9 @@ public class any_base_to_decimal {
     if (base < 2 || base > 36) {
       throw new IllegalArgumentException("Base must be between 2 to 36.");
     }
-
-    for (int i = 0; i < number.length(); i++) {
-      char ch = Character.toLowerCase(number.charAt(i));
+    char[] _number = number.toLowerCase().toCharArray();
+    for (int i = _number.length - 1; i >= 0; i--) {
+      char ch = _number[i];
 
       boolean isDigit = Character.isDigit(ch);
 
