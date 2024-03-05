@@ -5,7 +5,7 @@
 #define MAX 100
 
 void push(int *stack, int *topIndex, int element);
-void pop(int *stack, int *topIndex);
+void pop(int *topIndex);
 bool isEmpty(int topIndex);
 void display(int *stack, int topIndex);
 void stackStatus(int *stack, int topIndex);
@@ -25,7 +25,7 @@ int main()
         if (input == 1)
             push(stack, &topIndex, getInput("Enter an element: "));
         else if (input == 2)
-            pop(stack, &topIndex);
+            pop(&topIndex);
         else if (input == 3)
             stackStatus(stack, topIndex);
         display(stack, topIndex);
@@ -63,7 +63,7 @@ void push(int *stack, int *topIndex, int element)
         stack[++*topIndex] = element;
 }
 
-void pop(int *stack, int *topIndex)
+void pop(int *topIndex)
 {
     if (isEmpty(*topIndex))
         printf("\nStack underflow");

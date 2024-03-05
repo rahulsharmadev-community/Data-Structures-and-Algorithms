@@ -8,6 +8,9 @@
 # Log files
 *.log
 
+# Folder
+**/build
+
 # VS-Dependent
 *.devcontainer
 *.vscode

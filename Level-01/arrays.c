@@ -1,6 +1,5 @@
 
 #include <stdio.h>
-#include <conio.h>
 #define size 10
 
 int lastIndex = 3;
