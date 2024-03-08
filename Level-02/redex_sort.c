@@ -1,9 +1,11 @@
+
+
 #include <stdio.h>
 #define MAX 15
 
-int maxInArray(int *arr, int arrSize);
 void display(int *arr, int arrSize);
 void countSort(int *arr, int arrSize, int exp);
+int maxInArray(int *arr, int arrSize);
 int lenOfGreaterElement(int *arr, int arrSize);
 int main()
 {
@@ -21,19 +23,25 @@ int main()
     return 0;
 }
 
+// Function to display elements of an array
 void display(int *arr, int arrSize)
 {
     for (int i = 0; i < arrSize; i++)
         printf("%d, ", arr[i]);
 }
+
+// Function to find the maximum value in an array
 int maxInArray(int *arr, int arrSize)
 {
+
     int max = arr[0];
     for (int i = 0; i < arrSize; i++)
         if (arr[i] > max)
             max = arr[i];
     return max;
 }
+
+// Function to find the length of the greater element in the array [optional]
 int lenOfGreaterElement(int *arr, int arrSize)
 {
     int max = maxInArray(arr, arrSize);
@@ -46,6 +54,14 @@ int lenOfGreaterElement(int *arr, int arrSize)
     }
     return count;
 }
+
+/*
+Function to perform Radix Sort using counting sort
+ - `range`: Represents the range of possible digits (0 to 9) in the decimal number system.
+ - `freq[range]`: An array to store the frequency of each digit at the current digit place.
+ - `ans[arrSize]`: An auxiliary array to store the sorted elements temporaril
+ - `exp`: The current digit place being processed (e.g., 1 for the units digit, 10 for the tens digit, and so on).
+ */
 void countSort(int *arr, int arrSize, int exp)
 {
     int range = 10;
