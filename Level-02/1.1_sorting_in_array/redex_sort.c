@@ -1,12 +1,13 @@
 
 
 #include <stdio.h>
+#include "_fun_.c"
 #define MAX 15
 
-void display(int *arr, int arrSize);
 void countSort(int *arr, int arrSize, int exp);
 int maxInArray(int *arr, int arrSize);
 int lenOfGreaterElement(int *arr, int arrSize);
+
 int main()
 {
     int arr[MAX] = {912, 236, 33, 435, 35, 4, 453, 9, 56, 54, 656, 5, 68, 9, 79};
@@ -21,13 +22,6 @@ int main()
     display(arr, MAX);
 
     return 0;
-}
-
-// Function to display elements of an array
-void display(int *arr, int arrSize)
-{
-    for (int i = 0; i < arrSize; i++)
-        printf("%d, ", arr[i]);
 }
 
 // Function to find the maximum value in an array

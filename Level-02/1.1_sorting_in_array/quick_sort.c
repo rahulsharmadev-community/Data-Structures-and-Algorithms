@@ -1,8 +1,7 @@
 #include <stdio.h>
+#include "_fun_.c"
 #define MAX 5
 
-void swap(int *arr, int i, int j);
-void display(int *arr, int arrSize);
 void quickSort(int *arr, int firstIdx, int lastIdx);
 int partition(int *arr, int pivot, int firstIdx, int lastIdx);
 
@@ -39,17 +38,4 @@ int partition(int *arr, int pivot, int firstIdx, int lastIdx)
         }
     }
     return j - 1;
-}
-
-void swap(int *arr, int i, int j)
-{
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
-
-void display(int *arr, int arrSize)
-{
-    for (int i = 0; i < arrSize; i++)
-        printf("%d, ", arr[i]);
 }

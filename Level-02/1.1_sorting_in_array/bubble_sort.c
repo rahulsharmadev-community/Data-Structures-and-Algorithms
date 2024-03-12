@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include "_fun_.c"
 
-void swap(int *a, int *b);
-void display(int *arr, int size);
 void ascending(int *arr, int size);
 void descending(int *arr, int size);
 
@@ -49,18 +48,4 @@ void descending(int *arr, int size)
         if (isSorted)
             break;
     }
-}
-
-void display(int *arr, int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-        printf("%d, ", arr[i]);
-    printf("\n");
-}
-void swap(int *a, int *b)
-{
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
 }

@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include "_fun_.c"
+
 #define MAX 15
+
 
 void countSort(int *arr, int *ans, int arrSize, int min, int max);
 void minMax(int *arr, int arrSize, int *min, int *max);
