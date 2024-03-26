@@ -1,0 +1,19 @@
+name: rx.dart
+description: A sample command-line application.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+environment:
+  sdk: ^3.3.2
+
+# Add regular dependencies here.
+dependencies: 
+  rxdart: ^0.27.7
+
+  jars_core:
+    git:
+      url: https://github.com/rahulsharmadev-community/jars.git
+      ref: main
+      path: packages/jars_core
+
+dev_dependencies: 
+  test:
